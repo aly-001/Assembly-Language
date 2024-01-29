@@ -14,7 +14,6 @@ main:
     jal leaf_example # Call the function
     move $s0, $v0    # Move the result from $v0 to $s0 (or handle it as needed)
 
-    # Continue with the rest of your program...
     move $a0, $v0    # Move the value from $v0 to $a0 (argument for syscall)
     li $v0, 1        # set $v0 to 1 (Syscall looks at $v0 and acts accordingly)
     syscall          # Make the system call to print the integer
