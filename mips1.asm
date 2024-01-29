@@ -1,3 +1,5 @@
+# Finds first index of A with element smaller than k
+
 .data
 A:  .word 3, 4, 5, 3, 2, 1, 8, 3, 3  # Array A
 k:  .word 7                            # Value of k
