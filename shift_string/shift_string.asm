@@ -6,7 +6,7 @@
 
 goodbyeMsg: .asciiz "Goodbye!"
 
-s: .asciiz "Hello there!\n"    # string
+buffer: .asciiz "Hello there!\n"    # string
 l: .word 12                  # Length of word
 m: .word 3                   # Shift amount
 buffer1: .space 31
@@ -28,7 +28,7 @@ main:
 Loop: # copy from m to l
     beq $s2, $s1, ExitLoop # Exit the loop if i == l
 
-    la $a0, s          # Load address of the string into $a0    # $a0 = s
+    la $a0, buffer          # Load address of the string into $a0    # $a0 = buffer
     add $t1, $s2, $a0  # Calculate address of s[i]              # $t1 = $a0 + $s2 ($t1 = s + (i + m))
     lb $t1, 0($t1)     # Load byte from s[i] into $t1           # $t1 = s[s + (i+m)]
 
@@ -58,7 +58,7 @@ ExitLoop:
 Loop2: # copy from 0 to m
     beq $t0, $s2, ExitLoop2 # Exit the loop if i == m
 
-    la $a0, s          # Load address of the string into $a0
+    la $a0, buffer          # Load address of the string into $a0
     add $t1, $t0, $a0  # Calculate address of s[i]
     lb $t1, 0($t1)     # Load byte from s[i] into $t1
     
