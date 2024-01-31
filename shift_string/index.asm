@@ -90,7 +90,7 @@ main:
 
 #########
 #       #
-#   1   #
+#   1   #   ---  ask for input to get string
 #       #
 #########
 
@@ -107,7 +107,7 @@ syscall                      # read string from console into buffer
 
 #########
 #       #
-#   2   #
+#   2   #   ---  throw error if string is bad
 #       #
 #########
 
@@ -119,7 +119,7 @@ beq $t0, $t1, Error1         # Branch to Error1 if input is just '\n'
 
 #########
 #       #
-#   3   #
+#   3   #   ---  find length of number string, store it in l
 #       #
 #########
 
@@ -142,7 +142,7 @@ StoreLength:
     
 #########
 #       #
-#   4   #
+#   4   #   ---  ask for input to get number string
 #       #
 #########
 
@@ -159,7 +159,7 @@ syscall                      # read string from console into buffer
 
 #########
 #       #
-#   5   #
+#   5   #   ---  throw error if number string is bad
 #       #
 #########
 
@@ -170,7 +170,7 @@ beq $t0, $t1, Error2         # Branch to Error1 if input is just '\n'
 
 #########
 #       #
-#   6   #
+#   6   #   ---  convert ascii string to number, store it in m
 #       #
 #########
 
@@ -234,7 +234,7 @@ StoreResult:
     
 #########
 #       #
-#   7   #
+#   7   #   ---  change m to m = l mod m
 #       #
 #########
 
@@ -250,7 +250,7 @@ sw $t2, m       # Store the result back in m
 
 #########
 #       #
-#   8   #
+#   8   #   ---  copy string from m to 1, store in buffer1
 #       #
 #########
 # USE m, l, and buffer to store shifted string into buffer1
@@ -287,7 +287,7 @@ ExitLoop:
 
 #########
 #       #
-#   9   #
+#   9   #   ---  copy string from 0 to m, store in buffer2
 #       #
 #########
 
@@ -315,7 +315,7 @@ ExitLoop2:
 
 #########
 #       #
-#   10  #
+#   10  #   ---  concatinate buffer1 and buffer 2, store in buffer1
 #       #
 #########
 
