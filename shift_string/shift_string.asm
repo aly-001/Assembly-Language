@@ -19,7 +19,7 @@ end_loop_msg: .asciiz "Ended first loop!\n"
 main:
 
 
-# Loop1: (working)  # COPY FROM m TO l
+# Loop1: (working) # COPY FROM m TO l
 
     lw $s1, l        # Load the length of the string into $t0
     li $t0, 0        # Initialize loop counter (i) to 0
