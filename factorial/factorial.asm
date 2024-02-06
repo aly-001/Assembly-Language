@@ -2,6 +2,7 @@
 
 buffer1: .space 100
 n: .word 5
+m: .word 5
 
 .text
 
@@ -10,11 +11,7 @@ main:
 	jal Fact
 	move $a0, $v0
 	
-	li $v0, 1
-	syscall
-	
-	li $v0, 10
-	syscall
+	sw $a0, m
 
 
 Fact:
