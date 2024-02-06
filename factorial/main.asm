@@ -28,7 +28,7 @@ main:
     slti $t1, $t0, 0
     bne $t1, $zero, Error
     
-    # call factorial function on m and store result in m
+    # call factorial function on m and store result in n
     
     lw $a0, m
     jal Fact
